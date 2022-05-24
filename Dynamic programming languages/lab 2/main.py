@@ -17,7 +17,7 @@ rules = {
 def main():
     command = ""
     while (True):
-        print("Введите func, чтобы посчитать значение функции со своими аргументами или examples, чтобы просмотреть контрольные примеры. Введите exit, чтобы выйти")
+        print("Введите func, чтобы посчитать значение функции со своими аргументами или examples, чтобы просмотреть контрольные примеры. Введите exit, чтобы выйти.")
         command = input("Введите команду: ")
         if (command == "func"):
             calc()
@@ -46,8 +46,10 @@ def func(a, d, f):
 
 def inputArgument(arg):
     inputArg = 0
-    while (not checkArgument(arg, inputArg)):
+    while (True):
         inputArg = (float)(input("Введите аргумент " + arg + ": "))
+        if (not checkArgument(arg, inputArg)): print("Введенное значение не удовлетворяет условиям")
+        else: break
     return inputArg
 
 def checkArgument(arg, value):
