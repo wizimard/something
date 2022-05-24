@@ -1,5 +1,7 @@
 import math
 
+import examples as exp
+
 rules = {
     'a': {
         'start': 0.8, 'end': 1.11, 'dec': 0.01
@@ -78,7 +80,12 @@ def output(a, b, c, d, f, x, result):
     print("|\tx\t\t|\t{0}\t\t\t|\t\t\t\t|".format(x))
 
 def examples():
-    pass
+    i = 1
+    for example in exp.examples:
+        print("Контрольный пример №{0}".format(i))
+        func(example['a'], example['d'], example['f'])
+        i += 1
 
 
-main()
+if __name__ == "__main__":
+    main()
